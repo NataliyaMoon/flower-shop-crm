@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+      "react-app",
+      "react-app/jest",
+      "airbnb/hooks",
+      "plugin:react/jsx-runtime"
+  ],
+   // Specifying Parser
+   "parser": "@typescript-eslint/parser",
+   "parserOptions": {
+     "ecmaFeatures": {
+       "jsx": true
+     },
+     "ecmaVersion": "latest",
+     "sourceType": "module",
+     "tsconfigRootDir": ".",
+     "project": [
+       "./tsconfig.json"
+     ]
+   },
+     // Resolve imports
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    },
+    "react": {
+      "version": "18.x"
+    }
+  },
+  "rules": {
+    "no-unused-vars":"warn",
+      "no-console":"warn",
+      "quotes": ["warn", "single"],
+      "max-len": ["warn", {"code": 120}], 
+      "semi": ["warn", "always"],
+      "comma-dangle": ["warn", "always-multiline"],
+      "import/order": [
+          "warn",
+          {
+            "groups": [
+              "index",
+              "sibling",
+              "parent",
+              "internal",
+              "external",
+              "builtin",
+              "object",
+              "type"
+            ]
+          }
+        ]
+  }
+}
